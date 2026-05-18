@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
 
   <meta
@@ -11,62 +12,121 @@
 
   <title>Fruit Finder Christchurch</title>
 
-  <!-- Leaflet CSS -->
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- LEAFLET CSS -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
-  <!-- Main CSS -->
+  <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- MARKER CLUSTER CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+/>
+
 </head>
 
 <body>
 
-  <!-- APP -->
   <div class="app-container">
 
     <!-- HEADER -->
     <header class="header">
 
-      <div class="logo-section">
+      <div class="container header-content">
 
-        <img
-          src="assets/logos/logo.png"
-          alt="Fruit Finder Logo"
-          class="logo"
-        />
+        <!-- LOGO -->
+        <div class="logo-section">
 
-      </div>
+          <img
+            src="assets/logos/logo.webp"
+            alt="Fruit Finder Logo"
+            class="logo"
+          />
 
-      <div class="header-buttons">
+        </div>
 
-        <button class="header-btn">
-          Tutorial
-        </button>
+        <!-- HEADER BUTTONS -->
+        <div class="header-actions">
 
-        <button class="header-btn">
-          Disclaimer
-        </button>
+          <button class="header-btn">
+
+            <span class="btn-icon">🎥</span>
+
+            <span>
+              How to use Fruit Finder Map - Video Tutorial
+            </span>
+
+          </button>
+
+          <button class="header-btn">
+
+            <span class="btn-icon">🛡️</span>
+
+            <span>Disclaimer</span>
+
+          </button>
+
+        </div>
 
       </div>
 
     </header>
 
     <!-- MAIN -->
-    <main class="main-layout">
+    <main class="container main-layout">
 
       <!-- SIDEBAR -->
       <aside class="sidebar">
 
         <h2>Fruit Legend</h2>
 
+        <!-- LEGEND -->
         <div id="fruitLegend">
 
           <div class="fruit-item">🍎 Apple</div>
           <div class="fruit-item">🍒 Cherry</div>
+          <div class="fruit-item">🍇 Grapes</div>
+          <div class="fruit-item">🟣 Plum</div>
           <div class="fruit-item">🍑 Peach</div>
-          <div class="fruit-item">🍐 Pear</div>
+          <div class="fruit-item">🍓 Strawberry</div>
+          <div class="fruit-item">🍅 Tomato</div>
+
+        </div>
+
+        <!-- INFO -->
+        <div class="sidebar-info">
+
+          <div class="info-icon">
+            i
+          </div>
+
+          <p>
+            Click on a fruit on the map
+            to view more information
+          </p>
 
         </div>
 
@@ -81,7 +141,7 @@
           <input
             type="text"
             id="searchInput"
-            placeholder="Find fruit trees, information and location"
+            placeholder="Find Fruit Trees, Information and Location"
           />
 
         </div>
@@ -96,19 +156,55 @@
     <!-- FOOTER -->
     <footer class="footer">
 
-      <p>
-        Fruit Finder Christchurch
-      </p>
+      <div class="container footer-content">
+
+        <!-- FOOTER LOGO -->
+        <div class="footer-logo">
+
+          <img
+            src="assets/logos/logo.webp"
+            alt="Fruit Finder Logo"
+          />
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-contact">
+
+          <p>(0800) CONTACT FF</p>
+          <p>info@fruitfinder.nz</p>
+
+        </div>
+
+        <!-- DEV -->
+        <div class="footer-dev">
+          Developer: Sunil Kafley
+        </div>
+
+        <!-- LINKS -->
+        <div class="footer-link">
+          Privacy Policy
+        </div>
+
+        <div class="footer-link">
+          Terms and Conditions
+        </div>
+
+      </div>
 
     </footer>
 
   </div>
 
-  <!-- Leaflet JS -->
+  <!-- LEAFLET JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- MAIN APP -->
+  <!-- MARKER CLUSTER JS -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- APP JS -->
   <script type="module" src="src/app.js"></script>
 
 </body>
+
 </html>

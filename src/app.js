@@ -1,5 +1,19 @@
 import { initMap } from './map/initMap.js'
 
+import { loadTrees } from './services/loadTrees.js'
+
+import { addTreeMarkers } from './map/markers.js'
+
 const map = initMap()
 
-console.log('Fruit Finder Started')
+async function initializeApp() {
+
+  const geojson = await loadTrees()
+
+  if (!geojson) return
+
+  addTreeMarkers(map, geojson)
+
+}
+
+initializeApp()
