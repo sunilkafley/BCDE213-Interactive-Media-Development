@@ -1,64 +1,28 @@
-const edibleKeywords = [
+import { approvedTrees } from '../../data/approvedTrees.js'
 
-  'almond',
-  'apple',
-  'apricot',
-  'cherry',
-  'crab apple',
-  'elderberry',
-  'european beech',
-  'hazel',
-  'honey locust',
-  'jelly palm',
-  'juniper',
-  'loquat',
-  'mulberry',
-  'olive',
-  'peach',
-  'pear',
-  'persimon',
-  'plum',
-  'quince',
-  'service berry',
-  'strawberry tree',
-  'sweet bay',
-  'sweet chestnut',
-  'walnut'
-
-]
-
-async function filterEdibleTrees() {
+async function filterTrees() {
 
   try {
 
-    // LOAD ORIGINAL DATASET
-    const response = await fetch('../../data/trees.geojson')
+    const response =
+      await fetch('./data/trees.geojson')
 
-    const geojson = await response.json()
+    const geojson =
+      await response.json()
 
-    // FILTER FEATURES
-    const filteredFeatures = geojson.features.filter(feature => {
+    // EXACT MATCH FILTER
+    const filteredFeatures =
+      geojson.features.filter(feature => {
 
-      const properties = feature.properties || {}
+        const properties =
+          feature.properties || {}
 
-      const commonName =
-        (properties.CommonName || '').toLowerCase()
+        const commonName =
+          (properties.CommonName || '').trim()
 
-      const species =
-        (properties.Species || '').toLowerCase()
+        return approvedTrees.includes(commonName)
 
-      const botanicalName =
-        (properties.BotanicName || '').toLowerCase()
-
-      return edibleKeywords.some(keyword =>
-
-        commonName.includes(keyword) ||
-        species.includes(keyword) ||
-        botanicalName.includes(keyword)
-
-      )
-
-    })
+      })
 
     // CLEAN GEOJSON
     const edibleGeojson = {
@@ -70,7 +34,7 @@ async function filterEdibleTrees() {
     }
 
     console.log(
-      `Total official fruit trees: ${filteredFeatures.length}`
+      `Filtered Trees: ${filteredFeatures.length}`
     )
 
     console.log(edibleGeojson)
@@ -79,13 +43,10 @@ async function filterEdibleTrees() {
 
   catch (error) {
 
-    console.error(
-      'Error filtering trees:',
-      error
-    )
+    console.error(error)
 
   }
 
 }
 
-filterEdibleTrees()
+filterTrees()

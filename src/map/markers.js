@@ -27,30 +27,108 @@ export function addTreeMarkers(map, geojson) {
 
       let markerIcon = fruitIcons.default
 
-      // DETECT TYPE
-      if (commonName.includes('apple')) {
+      // MATCH ICONS
+      if (commonName.includes('almond')) {
+        markerIcon = fruitIcons.almond
+      }
+
+      else if (commonName.includes('apple')) {
         markerIcon = fruitIcons.apple
+      }
+
+      else if (commonName.includes('apricot')) {
+        markerIcon = fruitIcons.apricot
       }
 
       else if (commonName.includes('cherry')) {
         markerIcon = fruitIcons.cherry
       }
 
-      else if (commonName.includes('pear')) {
-        markerIcon = fruitIcons.pear
+      else if (commonName.includes('crab apple')) {
+        markerIcon = fruitIcons.crabapple
+      }
+
+      else if (commonName.includes('elderberry')) {
+        markerIcon = fruitIcons.elderberry
+      }
+
+      else if (commonName.includes('european beech')) {
+        markerIcon = fruitIcons.europeanbeech
+      }
+
+      else if (commonName.includes('hazel')) {
+        markerIcon = fruitIcons.hazel
+      }
+
+      else if (commonName.includes('honey locust')) {
+        markerIcon = fruitIcons.honeylocust
+      }
+
+      else if (commonName.includes('jelly palm')) {
+        markerIcon = fruitIcons.jellypalm
+      }
+
+      else if (commonName.includes('juniper')) {
+        markerIcon = fruitIcons.juniper
+      }
+
+      else if (commonName.includes('loquat')) {
+        markerIcon = fruitIcons.loquat
+      }
+
+      else if (commonName.includes('mulberry')) {
+        markerIcon = fruitIcons.mulberry
+      }
+
+      else if (commonName.includes('olive')) {
+        markerIcon = fruitIcons.olive
       }
 
       else if (commonName.includes('peach')) {
         markerIcon = fruitIcons.peach
       }
 
+      else if (commonName.includes('pear')) {
+        markerIcon = fruitIcons.pear
+      }
+
+      else if (commonName.includes('persimon')) {
+        markerIcon = fruitIcons.persimon
+      }
+
       else if (commonName.includes('plum')) {
         markerIcon = fruitIcons.plum
       }
 
+      else if (commonName.includes('quince')) {
+        markerIcon = fruitIcons.quince
+      }
+
+      else if (commonName.includes('service berry')) {
+        markerIcon = fruitIcons.serviceberry
+      }
+
+      else if (commonName.includes('strawberry')) {
+        markerIcon = fruitIcons.strawberry
+      }
+
+      else if (commonName.includes('sweet bay')) {
+        markerIcon = fruitIcons.sweetbay
+      }
+
+      else if (commonName.includes('sweet chestnut')) {
+        markerIcon = fruitIcons.sweetchestnut
+      }
+
+      else if (commonName.includes('walnut')) {
+        markerIcon = fruitIcons.walnut
+      }
+
       // RETURN MARKER
       return L.marker(latlng, {
+
         icon: markerIcon
+
       })
 
     },

@@ -168,7 +168,30 @@ body {
 
   background: white;
 
-  padding: 24px 20px;
+  padding: 20px 18px;
+
+  overflow-y: auto;
+
+  min-height: 0;
+}
+
+
+/* =========================
+   LEGEND SCROLLBAR
+========================= */
+
+#fruitLegend::-webkit-scrollbar {
+  width: 6px;
+}
+
+#fruitLegend::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#fruitLegend::-webkit-scrollbar-thumb {
+  background: #c6d7bb;
+
+  border-radius: 20px;
 }
 
 /* FRUIT ITEMS */
@@ -176,14 +199,30 @@ body {
 .fruit-item {
   display: flex;
   align-items: center;
+
   gap: 12px;
 
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
+
+  line-height: 1.2;
 }
 
+.fruit-item img {
+  width: 24px;
+  height: 24px;
+
+  min-width: 24px;
+  min-height: 24px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  display: block;
+}
 /* INFO SECTION */
 
 .sidebar-info {
