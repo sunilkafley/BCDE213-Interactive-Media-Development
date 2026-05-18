@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--background-color);
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+  height: 100px;
+
+  background: var(--primary-green);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+}
+
+.logo {
+  height: 70px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.header-btn {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: var(--border-radius);
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+/* MAIN */
+
+.main-layout {
+  display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: var(--sidebar-width);
+
+  background: white;
+
+  padding: 20px;
+
+  min-height: calc(100vh - 160px);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.fruit-item {
+  margin-bottom: 14px;
+}
+
+/* MAP SECTION */
+
+.map-section {
+  flex: 1;
+
+  padding: 20px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: var(--border-radius);
+
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+.footer {
+  height: 60px;
+
+  background: var(--primary-green);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

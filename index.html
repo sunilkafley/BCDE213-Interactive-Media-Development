@@ -1,34 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Fruit Finder Christchurch</title>
 
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 
-  <!-- Leaflet JS -->
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-
-  <!-- Custom CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-    <h1>Fruit Finder Christchurch</h1>
-    <p>This site is a work in progress. Please check back later for updates.</p>
+  <!-- APP -->
+  <div class="app-container">
 
-  <div id="map"></div>
+    <!-- HEADER -->
+    <header class="header">
 
-  
+      <div class="logo-section">
 
-  <!-- App JS -->
-  <script src="src/app.js"></script>
+        <img
+          src="assets/logos/logo.png"
+          alt="Fruit Finder Logo"
+          class="logo"
+        />
+
+      </div>
+
+      <div class="header-buttons">
+
+        <button class="header-btn">
+          Tutorial
+        </button>
+
+        <button class="header-btn">
+          Disclaimer
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <h2>Fruit Legend</h2>
+
+        <div id="fruitLegend">
+
+          <div class="fruit-item">🍎 Apple</div>
+          <div class="fruit-item">🍒 Cherry</div>
+          <div class="fruit-item">🍑 Peach</div>
+          <div class="fruit-item">🍐 Pear</div>
+
+        </div>
+
+      </aside>
+
+      <!-- MAP SECTION -->
+      <section class="map-section">
+
+        <!-- SEARCH -->
+        <div class="search-container">
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Find fruit trees, information and location"
+          />
+
+        </div>
+
+        <!-- MAP -->
+        <div id="map"></div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      <p>
+        Fruit Finder Christchurch
+      </p>
+
+    </footer>
+
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- MAIN APP -->
+  <script type="module" src="src/app.js"></script>
 
 </body>
 </html>

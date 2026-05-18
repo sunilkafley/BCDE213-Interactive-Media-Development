@@ -1,0 +1,10 @@
+:root {
+  --primary-green: #4F9D69;
+  --dark-green: #2E6F4F;
+  --light-green: #DDEBD9;
+  --background-color: #F5F5F5;
+
+  --sidebar-width: 260px;
+
+  --border-radius: 12px;
+}

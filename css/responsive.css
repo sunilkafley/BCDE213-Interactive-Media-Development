@@ -1,0 +1,12 @@
+@media (max-width: 900px) {
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+}

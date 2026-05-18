@@ -1,9 +1,5 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-#map {
-  height: 100vh;
-  width: 100%;
-}
+@import url('./variables.css');
+@import url('./layout.css');
+@import url('./map.css');
+@import url('./popup.css');
+@import url('./responsive.css');
