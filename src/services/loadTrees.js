@@ -1,19 +1,62 @@
-export async function loadTrees() {
+import { approvedTrees } from '../../data/approvedTrees.js'
+import { addTreeMarkers } from '../map/markers.js'
+import { initializeSearch } from '../search/search.js'
+
+export async function loadTrees(map) {
 
   try {
 
-    const response = await fetch('./data/edible-trees.geojson')
+    const response =
+      await fetch('./data/trees.geojson')
 
-    const geojson = await response.json()
+    const geojson =
+      await response.json()
 
-    return geojson
+    const edibleFeatures =
+      geojson.features.filter(feature => {
+
+        const properties =
+          feature.properties || {}
+
+        const commonName =
+          (properties.CommonName || '').trim()
+
+        // EXACT MATCH AGAINST CATEGORY MAP
+        return Object.values(approvedTrees)
+          .flat()
+          .includes(commonName)
+
+      })
+
+    const edibleGeojson = {
+
+      type: 'FeatureCollection',
+
+      features: edibleFeatures
+
+    }
+
+    console.log(
+      `Loaded edible trees: ${edibleFeatures.length}`
+    )
+
+    const treeLayer =
+  addTreeMarkers(
+    map,
+    edibleGeojson
+  )
+
+initializeSearch(
+  map,
+  treeLayer
+)
 
   }
 
   catch (error) {
 
     console.error(
-      'Error loading edible trees:',
+      'Error loading trees:',
       error
     )
 

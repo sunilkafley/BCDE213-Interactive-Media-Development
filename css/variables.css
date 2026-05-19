@@ -1,10 +1,37 @@
 :root {
-  --primary-green: #4F9D69;
-  --dark-green: #2E6F4F;
-  --light-green: #DDEBD9;
-  --background-color: #F5F5F5;
 
-  --sidebar-width: 260px;
+  /* COLORS */
 
-  --border-radius: 12px;
+  --primary-green: #5a9f68;
+
+  --light-green: #d9e6d0;
+
+  --legend-green: #c5d9b8;
+
+  --white: #ffffff;
+
+  --black: #222222;
+
+  --gray: #f5f5f5;
+
+  --border-gray: #e5e5e5;
+
+  /* SHADOWS */
+
+  --shadow-light:
+    0 4px 16px rgba(0,0,0,0.12);
+
+  /* RADIUS */
+
+  --radius-lg: 16px;
+
+  --radius-md: 14px;
+
+  --radius-sm: 10px;
+
+  /* FONT */
+
+  --font-main:
+    'Source Sans 3', sans-serif;
+
 }

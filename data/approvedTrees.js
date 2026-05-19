@@ -1,74 +1,105 @@
-export const approvedTrees = [
+export const approvedTrees = {
 
-  // ALMOND
-  'Almond',
+  Plum: [
+    'Purple-leaf Cherry Plum',
+    "Pissard's Plum",
+    'Myrobalan Plum',
+    'European Plum'
+  ],
 
-  // APPLE
-  'Apple',
+  'Crab Apple': [
+    'Chinese Crab Apple',
+    'Midget Crab Apple',
+    'Pillar Crab Apple',
+    'Siberian Crab',
+    'Southern crabapple',
+    "Hall's Crab Apple",
+    'Zumi Crab Apple'
+  ],
 
-  // APRICOT
-  'Apricot',
+  'European Beech': [
+    'European Beech',
+    'Copper Beech'
+  ],
 
-  // CHERRY
-  'Cherry',
+  Walnut: [
+    'Common Walnut',
+    'Black Walnut',
+    'Walnut'
+  ],
 
-  // CRAB APPLE
-  'Ballerina Crab Apple',
-  'Crab Apple',
+  'Strawberry Tree': [
+    'Strawberry tree',
+    'Cyprus strawberry tree'
+  ],
 
-  // EUROPEAN BEECH
-  'European Beech',
+  'Sweet Chestnut': [
+    'Sweet chestnut'
+  ],
 
-  // HAZEL
-  'Hazel',
+  'Honey Locust': [
+    'Honeylocust',
+    'Honey Locust'
+  ],
 
-  // HONEY LOCUST
-  'Honey Locust',
+  Olive: [
+    'Olive'
+  ],
 
-  // JELLY PALM
-  'Jelly Palm',
+  Peach: [
+    'Peach'
+  ],
 
-  // JUNIPER
-  'Juniper',
+  Pear: [
+    'Pear'
+  ],
 
-  // LOQUAT
-  'Loquat',
+  Apple: [
+    'Common Apple'
+  ],
 
-  // MULBERRY
-  'Mulberry',
+  Hazel: [
+    'Hazel'
+  ],
 
-  // OLIVE
-  'African Olive',
-  'Olive',
+  Apricot: [
+    'Apricot',
+    'Flowering Apricot',
+    'Japanese Apricot'
+  ],
 
-  // PEACH
-  'Peach',
+  'Sweet Bay': [
+    'Bay laurel'
+  ],
 
-  // PEAR
-  'Pear',
+  Mulberry: [
+    'Common Mulberry',
+    'Weeping Mulberry'
+  ],
 
-  // PERSIMON
-  'Persimon',
+  Loquat: [
+    'Loquat tree'
+  ],
 
-  // PLUM
-  'Plum',
+  Quince: [
+    'Quince',
+    'Chinese Quince'
+  ],
 
-  // QUINCE
-  'Quince',
+  Almond: [
+    'Almond'
+  ],
 
-  // SERVICE BERRY
-  'Service Berry',
+  Cherry: [
+    'Bird Cherry'
+  ],
 
-  // STRAWBERRY TREE
-  'Strawberry Tree',
+  Elderberry: [
+    'Common Elder'
+  ],
 
-  // SWEET BAY
-  'Sweet Bay',
+  Juniper: [
+    'Common Juniper'
+  ]
 
-  // SWEET CHESTNUT
-  'Sweet Chestnut',
-
-  // WALNUT
-  'Walnut'
-
-]
+}
