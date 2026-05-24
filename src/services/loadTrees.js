@@ -7,7 +7,7 @@ export async function loadTrees(map) {
   try {
 
     const response =
-      await fetch('./data/trees.edible-trees.geojson')
+      await fetch('./data/edible-trees.geojson')
 
     const geojson =
       await response.json()
