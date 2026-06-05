@@ -3,70 +3,139 @@
 ========================= */
 
 .popup-card {
-  width: 240px;
+  max-width: var(--popup-width);
 
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: var(--font-main);
 }
 
 /* HEADER */
 
 .popup-header {
-  margin-bottom: 12px;
+  margin-bottom: var(--space-sm);
 }
 
-.popup-header h3 {
-  color: #4F9D69;
+.popup-title {
+  margin: 0;
 
-  font-size: 22px;
+  color: var(--primary-green);
+
+  font-size: var(--popup-title-size);
+
   font-weight: 700;
 }
 
 /* CONTENT */
 
 .popup-content {
-  margin-bottom: 18px;
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
 }
 
-.popup-content p {
-  margin-bottom: 10px;
+.popup-description {
+  margin: 0;
 
-  font-size: 15px;
-  line-height: 1.4;
-}
+  font-size: var(--popup-body-size);
 
-/* BUTTON */
-
-.popup-btn {
-  width: 100%;
-
-  height: 42px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: #4F9D69;
-
-  color: white;
-
-  cursor: pointer;
-
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
-
-  transition: 0.2s ease;
-}
-
-.popup-btn:hover {
-  background: #3d8655;
+  line-height: var(--leading-tight);
 }
 
 /* LEAFLET POPUP */
 
 .leaflet-popup-content-wrapper {
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-light);
 }
 
 .leaflet-popup-content {
-  margin: 16px;
+  margin: var(--space-md);
+}
+/* Pop up Image */
+.popup-image {
+  margin-bottom: var(--space-md);
+}
+
+.popup-image img {
+  display: block;
+
+  width: 100%;
+
+  max-height: var(--popup-image-height);
+
+  object-fit: cover;
+
+  border-radius: var(--radius-md);
+}
+
+.popup-meta {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-xs);
+}
+
+.popup-meta-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: var(--space-md);
+
+  font-size: var(--text-base);
+}
+
+/* =========================
+   POPUP ACTIONS
+========================= */
+
+.popup-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+
+  margin-top: var(--space-sm);
+}
+
+.route-btn {
+  width: 100%;
+
+  min-height: var(--route-button-height);
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  background: var(--primary-green);
+
+  color: var(--white);
+
+  font-family: inherit;
+
+  font-size: var(--route-button-font-size);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.route-btn:hover {
+  opacity: 0.9;
+}
+
+.route-btn:active {
+  transform: scale(0.98);
+}
+
+.route-btn:focus-visible {
+  outline: 2px solid var(--primary-green);
+
+  outline-offset: 2px;
 }

@@ -1,17 +1,25 @@
-#map {
-  width: 100%;
-  height: 78vh;
+/* =========================
+   MAP CONTAINER
+========================= */
 
-  border-radius: 16px;
+#map {
+  flex: 1;
+
+  min-height: 0;
+
+  width: 100%;
+
+  border-radius: var(--radius-md);
 
   overflow: hidden;
 }
 
-/* CUSTOM CLUSTER */
+/* =========================
+   CUSTOM CLUSTER
+========================= */
 
 .custom-cluster {
-
-  background: #4f9d69;
+  background: var(--primary-green);
 
   border-radius: 50%;
 
@@ -21,22 +29,77 @@
 
   justify-content: center;
 
-  color: white;
+  color: var(--white);
 
   font-weight: 700;
 
-  border: 3px solid white;
+  border: 0.1875rem solid var(--white);
 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-
+  box-shadow: var(--shadow-light);
 }
 
-/* HIDE SMALL CLUSTERS */
+/* =========================
+   HIDDEN CLUSTER
+========================= */
 
 .hidden-cluster {
-
   background: transparent;
 
   border: none;
+}
 
+/* =========================
+   FLOATING MAP CONTROLS
+========================= */
+
+.map-controls {
+  position: absolute;
+
+  top: calc(var(--search-height) + var(--space-2xl));
+
+  right: var(--space-md);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+
+  z-index: var(--z-overlay);
+}
+
+.map-control-btn {
+  width: 3.5rem;
+
+  height: 3.5rem;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-light);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.map-control-btn:hover {
+  transform: scale(1.05);
+}
+
+.map-control-btn img {
+  width: var(--icon-lg);
+
+  height: var(--icon-lg);
+
+  object-fit: contain;
 }

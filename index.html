@@ -1,321 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="UTF-8" />
+    <title>Fruit Finder Christchurch</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-  <title>Fruit Finder Christchurch</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+    <!-- LEAFLET CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+    />
 
-  <!-- LEAFLET CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- CUSTOM CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+    <!-- MARKER CLUSTER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    />
 
-  <!-- MARKER CLUSTER CSS -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    />
+  </head>
 
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-/>
-
-</head>
-
-<body>
-
-  <div class="app-container">
-
-    <!-- HEADER -->
-    <header class="header">
-
-      <div class="container header-content">
-
-        <!-- LOGO -->
-        <div class="logo-section">
-
-          <img
-            src="assets/logos/logo.webp"
-            alt="Fruit Finder Logo"
-            class="logo"
-          />
-
-        </div>
-
-        <!-- HEADER BUTTONS -->
-        <div class="header-actions">
-
-          <button class="header-btn">
-
-            <span class="btn-icon">🎥</span>
-
-            <span>
-              How to use Fruit Finder Map - Video Tutorial
-            </span>
-
-          </button>
-
-          <button class="header-btn">
-
-            <span class="btn-icon">🛡️</span>
-
-            <span>Disclaimer</span>
-
-          </button>
-
-        </div>
-
-      </div>
-
-    </header>
-
-    <!-- MAIN -->
-    <main class="container main-layout">
-
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-
-        <h2>Fruit Legend</h2>
-
-        <!-- LEGEND -->
-        <div id="fruitLegend">
-
-  <div class="fruit-item">
-    <img src="assets/markers/almond.webp" alt="Almond">
-    <span>Almond</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/apple.webp" alt="Apple">
-    <span>Apple</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/apricot.webp" alt="Apricot">
-    <span>Apricot</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/cherry.webp" alt="Cherry">
-    <span>Cherry</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/crabapple.webp" alt="Crab Apple">
-    <span>Crab Apple</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/elderberry.webp" alt="Elderberry">
-    <span>Elderberry</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/europeanbeech.webp" alt="European Beech">
-    <span>European Beech</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/hazel.webp" alt="Hazel">
-    <span>Hazel</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/honeylocust.webp" alt="Honey Locust">
-    <span>Honey Locust</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/jellypalm.webp" alt="Jelly Palm">
-    <span>Jelly Palm</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/juniper.webp" alt="Juniper">
-    <span>Juniper</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/loquat.webp" alt="Loquat">
-    <span>Loquat</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/mulberry.webp" alt="Mulberry">
-    <span>Mulberry</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/olive.webp" alt="Olive">
-    <span>Olive</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/peach.webp" alt="Peach">
-    <span>Peach</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/pear.webp" alt="Pear">
-    <span>Pear</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/persimon.webp" alt="Persimon">
-    <span>Persimon</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/plum.webp" alt="Plum">
-    <span>Plum</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/quince.webp" alt="Quince">
-    <span>Quince</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/serviceberry.webp" alt="Service Berry">
-    <span>Service Berry</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/strawberry.webp" alt="Strawberry Tree">
-    <span>Strawberry Tree</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/sweetbay.webp" alt="Sweet Bay">
-    <span>Sweet Bay</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/sweetchestnut.webp" alt="Sweet Chestnut">
-    <span>Sweet Chestnut</span>
-  </div>
-
-  <div class="fruit-item">
-    <img src="assets/markers/walnut.webp" alt="Walnut">
-    <span>Walnut</span>
-  </div>
-
-</div>
-        <!-- INFO -->
-        <div class="sidebar-info">
-
-          <div class="info-icon">
-            i
+  <body>
+    <div class="app-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="container header-content">
+          <!-- LOGO -->
+          <div class="logo-section">
+            <img
+              src="assets/logos/logo.webp"
+              alt="Fruit Finder Logo"
+              class="logo"
+            />
           </div>
 
-          <p>
-            Click on a fruit on the map
-            to view more information
-          </p>
+          <!-- HEADER NAVIGATIONS -->
+          <nav class="header-nav" aria-label="Primary Navigation">
+            <a href="#tutorial" class="header-nav-link">
+              <img src="assets/icons/video.webp" alt="" aria-hidden="true" />
 
+              <span> How to Use Fruit Finder Map </span>
+            </a>
+
+            <a href="#disclaimer" class="header-nav-link">
+              <img src="assets/icons/shield.webp" alt="" aria-hidden="true" />
+            </a>
+          </nav>
         </div>
+      </header>
 
-      </aside>
+      <!-- MAIN -->
+      <main class="container main-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar is-collapsed">
+          <!-- BOTTOM SHEET HEADER -->
 
-      <!-- MAP SECTION -->
-      <section class="map-section">
+          <div class="legend-sheet-header">
+            <div class="sheet-handle"></div>
 
-        <!-- SEARCH -->
-        <div class="search-container">
+            <button
+              id="legendToggle"
+              aria-expanded="false"
+              aria-controls="legendCategories"
+            >
+              <span id="fruitLegendTitle">Fruit Legend</span>
 
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Find Fruit Trees, Information and Location"
-          />
+              <img
+                id="legendChevron"
+                src="assets/icons/chevronup.webp"
+                alt="Toggle Fruit Legend"
+              />
+            </button>
+          </div>
 
-        </div>
+          <!-- CATEGORY OVERVIEW -->
 
-        <!-- MAP -->
-        <div id="map"></div>
+          <div id="legendCategories">
+            <!-- CATEGORY CARDS GENERATED HERE -->
+          </div>
+        </aside>
 
-      </section>
+        <!-- MAP SECTION -->
+        <section class="map-section">
+          <!-- SEARCH -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Find Fruit Trees, Information and Location"
+            />
 
-    </main>
+            <button
+              id="searchButton"
+              type="button"
+              aria-label="Search Fruit Trees"
+            >
+              <img src="assets/icons/search.webp" alt="" aria-hidden="true" />
+            </button>
+          </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+          <!-- MAP -->
+          <div id="map"></div>
+        </section>
+      </main>
 
-      <div class="container footer-content">
-
-        <!-- FOOTER LOGO -->
-        <div class="footer-logo">
-
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-column footer-brand">
           <img
             src="assets/logos/logo.webp"
             alt="Fruit Finder Logo"
+            class="footer-logo"
           />
 
+          <div class="footer-brand-text">
+            <h3>Fruit Finder</h3>
+            <p>Christchurch</p>
+            <p>New Zealand</p>
+          </div>
         </div>
 
-        <!-- CONTACT -->
-        <div class="footer-contact">
+        <div class="footer-column footer-project">
+          <p>© 2026 Fruit Finder</p>
 
-          <p>(0800) CONTACT FF</p>
-          <p>info@fruitfinder.nz</p>
+          <p>BCDE211 Project</p>
 
+          <p>Ara Institute of Canterbury</p>
         </div>
 
-        <!-- DEV -->
-        <div class="footer-dev">
-          Developer: Sunil Kafley
+        <div class="footer-column footer-developer">
+          <p>Developed By</p>
+
+          <p>Sunil Kafley</p>
         </div>
+      </footer>
+    </div>
 
-        <!-- LINKS -->
-        <div class="footer-link">
-          Privacy Policy
-        </div>
+    <!-- LEAFLET JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-        <div class="footer-link">
-          Terms and Conditions
-        </div>
+    <!-- LEAFLET ROUTING MACHINE -->
 
-      </div>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-    </footer>
+    <!-- MARKER CLUSTER JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-  </div>
-
-  <!-- LEAFLET JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- MARKER CLUSTER JS -->
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-
-  <!-- APP JS -->
-  <script type="module" src="src/app.js"></script>
-
-</body>
-
+    <!-- APP JS -->
+    <script type="module" src="src/app.js"></script>
+  </body>
 </html>

@@ -1,0 +1,180 @@
+/* ==========================
+   ONBOARDING MODAL
+========================== */
+
+.onboarding-modal {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: var(--space-md);
+
+  background: rgb(0 0 0 / 0.4);
+
+  z-index: 9999;
+}
+
+.onboarding-card {
+  width: 100%;
+  max-width: 24rem;
+
+  padding: var(--space-md);
+
+  border-radius: var(--radius-md);
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-lg);
+
+  text-align: center;
+}
+
+.onboarding-card h2 {
+  margin-bottom: var(--space-md);
+}
+
+.onboarding-card ul {
+  display: inline-block;
+
+  margin: var(--space-md) auto;
+
+  padding-left: var(--space-lg);
+
+  text-align: left;
+}
+
+.onboarding-actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: var(--space-md);
+
+  margin-top: var(--space-xl);
+}
+
+.onboarding-btn-deny {
+  min-width: 7rem;
+
+  min-height: var(--touch-target);
+
+  border: 1px solid var(--border-gray);
+
+  border-radius: var(--radius-md);
+
+  background: var(--white);
+
+  color: #dc2626;
+
+  font-size: var(--text-md);
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.onboarding-btn-deny:hover {
+  opacity: 0.9;
+}
+
+.onboarding-btn-allow {
+  min-width: 7rem;
+
+  min-height: var(--touch-target);
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  background: var(--primary-green);
+
+  color: var(--white);
+
+  font-size: var(--text-md);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.onboarding-btn-allow:hover {
+  opacity: 0.9;
+}
+
+/* ==========================
+   GUIDELINES MODAL
+========================== */
+.guidelines-title {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: var(--space-sm);
+
+  margin-bottom: var(--space-md);
+}
+
+.guidelines-title-icon {
+  width: 2rem;
+
+  height: 2rem;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+.guidelines-title h3 {
+  margin: 0;
+}
+
+.guidelines-header-icon {
+  width: 3rem;
+
+  height: 3rem;
+
+  margin-bottom: var(--space-sm);
+
+  object-fit: contain;
+}
+
+.guidelines-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin: var(--space-md) 0;
+
+  text-align: left;
+}
+
+.guidelines-list li {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-sm);
+
+  margin-bottom: var(--space-md);
+}
+
+.guidelines-icon {
+  width: var(--icon-md);
+  height: var(--icon-md);
+
+  flex-shrink: 0;
+}
+
+#guidelinesOkBtn {
+  margin-top: var(--space-xl);
+}

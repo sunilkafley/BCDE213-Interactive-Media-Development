@@ -1,69 +1,96 @@
 function createIcon(iconName) {
-
   return L.icon({
-
     iconUrl: `assets/markers/${iconName}.webp`,
 
     iconSize: [32, 32],
 
     iconAnchor: [16, 32],
 
-    popupAnchor: [0, -28]
-
-  })
-
+    popupAnchor: [0, -28],
+  });
 }
 
 export const fruitIcons = {
+  almond: createIcon("almond"),
 
-  almond: createIcon('almond'),
+  apple: createIcon("apple"),
 
-  apple: createIcon('apple'),
+  apricot: createIcon("apricot"),
 
-  apricot: createIcon('apricot'),
+  cherry: createIcon("cherry"),
 
-  cherry: createIcon('cherry'),
+  crabapple: createIcon("crabapple"),
 
-  crabapple: createIcon('crabapple'),
+  elderberry: createIcon("elderberry"),
 
-  elderberry: createIcon('elderberry'),
+  europeanbeech: createIcon("europeanbeech"),
 
-  europeanbeech: createIcon('europeanbeech'),
+  hazel: createIcon("hazel"),
 
-  hazel: createIcon('hazel'),
+  honeylocust: createIcon("honeylocust"),
 
-  honeylocust: createIcon('honeylocust'),
+  juniper: createIcon("juniper"),
 
-  jellypalm: createIcon('jellypalm'),
+  loquat: createIcon("loquat"),
 
-  juniper: createIcon('juniper'),
+  mulberry: createIcon("mulberry"),
 
-  loquat: createIcon('loquat'),
+  olive: createIcon("olive"),
 
-  mulberry: createIcon('mulberry'),
+  peach: createIcon("peach"),
 
-  olive: createIcon('olive'),
+  pear: createIcon("pear"),
 
-  peach: createIcon('peach'),
+  persimmon: createIcon("persimmon"),
 
-  pear: createIcon('pear'),
+  plum: createIcon("plum"),
 
-  persimon: createIcon('persimon'),
+  quince: createIcon("quince"),
 
-  plum: createIcon('plum'),
+  serviceberry: createIcon("serviceberry"),
 
-  quince: createIcon('quince'),
+  strawberry: createIcon("strawberry"),
 
-  serviceberry: createIcon('serviceberry'),
+  sweetbay: createIcon("sweetbay"),
 
-  strawberry: createIcon('strawberry'),
+  sweetchestnut: createIcon("sweetchestnut"),
 
-  sweetbay: createIcon('sweetbay'),
+  walnut: createIcon("walnut"),
 
-  sweetchestnut: createIcon('sweetchestnut'),
+  default: createIcon("default"),
+};
 
-  walnut: createIcon('walnut'),
+const fruitIconMap = [
+  ["almond", "almond"],
+  ["apple", "apple"],
+  ["apricot", "apricot"],
+  ["cherry", "cherry"],
+  ["crab", "crabapple"],
+  ["beech", "europeanbeech"],
+  ["hazel", "hazel"],
+  ["honey", "honeylocust"],
+  ["juniper", "juniper"],
+  ["loquat", "loquat"],
+  ["mulberry", "mulberry"],
+  ["olive", "olive"],
+  ["peach", "peach"],
+  ["pear", "pear"],
+  ["persimmon", "persimmon"],
+  ["plum", "plum"],
+  ["quince", "quince"],
+  ["service", "serviceberry"],
+  ["strawberry", "strawberry"],
+  ["bay", "sweetbay"],
+  ["chestnut", "sweetchestnut"],
+  ["walnut", "walnut"],
+];
 
-  default: createIcon('apple')
+export function getFruitIcon(commonName = "") {
+  const normalizedName = commonName.toLowerCase();
 
+  const match = fruitIconMap.find(([keyword]) =>
+    normalizedName.includes(keyword),
+  );
+
+  return match ? fruitIcons[match[1]] : fruitIcons.default;
 }

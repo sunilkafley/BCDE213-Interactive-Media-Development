@@ -1,105 +1,60 @@
 export const approvedTrees = {
+  almond: ["Almond"],
 
-  Plum: [
-    'Purple-leaf Cherry Plum',
-    "Pissard's Plum",
-    'Myrobalan Plum',
-    'European Plum'
-  ],
+  apple: ["Common Apple"],
 
-  'Crab Apple': [
-    'Chinese Crab Apple',
-    'Midget Crab Apple',
-    'Pillar Crab Apple',
-    'Siberian Crab',
-    'Southern crabapple',
+  apricot: ["Apricot", "Flowering Apricot", "Japanese Apricot"],
+
+  cherry: ["Bird Cherry"],
+
+  crabapple: [
+    "Chinese Crab Apple",
+    "Midget Crab Apple",
+    "Pillar Crab Apple",
+    "Siberian Crab",
+    "Southern crabapple",
     "Hall's Crab Apple",
-    'Zumi Crab Apple'
+    "Zumi Crab Apple",
   ],
 
-  'European Beech': [
-    'European Beech',
-    'Copper Beech'
+  elderberry: ["Common Elder"],
+
+  europeanbeech: ["European Beech", "Copper Beech"],
+
+  hazel: ["Hazel"],
+
+  honeylocust: ["Honeylocust", "Honey Locust"],
+
+  juniper: ["Common Juniper"],
+
+  loquat: ["Loquat tree"],
+
+  mulberry: ["Common Mulberry", "Weeping Mulberry"],
+
+  olive: ["Olive"],
+
+  peach: ["Peach"],
+
+  pear: ["Pear"],
+
+  persimmon: ["Persimmon"],
+
+  plum: [
+    "Purple-leaf Cherry Plum",
+    "Pissard's Plum",
+    "Myrobalan Plum",
+    "European Plum",
   ],
 
-  Walnut: [
-    'Common Walnut',
-    'Black Walnut',
-    'Walnut'
-  ],
+  quince: ["Quince", "Chinese Quince"],
 
-  'Strawberry Tree': [
-    'Strawberry tree',
-    'Cyprus strawberry tree'
-  ],
+  serviceberry: ["Service Berry"],
 
-  'Sweet Chestnut': [
-    'Sweet chestnut'
-  ],
+  strawberry: ["Strawberry tree", "Cyprus strawberry tree"],
 
-  'Honey Locust': [
-    'Honeylocust',
-    'Honey Locust'
-  ],
+  sweetbay: ["Bay laurel"],
 
-  Olive: [
-    'Olive'
-  ],
+  sweetchestnut: ["Sweet chestnut"],
 
-  Peach: [
-    'Peach'
-  ],
-
-  Pear: [
-    'Pear'
-  ],
-
-  Apple: [
-    'Common Apple'
-  ],
-
-  Hazel: [
-    'Hazel'
-  ],
-
-  Apricot: [
-    'Apricot',
-    'Flowering Apricot',
-    'Japanese Apricot'
-  ],
-
-  'Sweet Bay': [
-    'Bay laurel'
-  ],
-
-  Mulberry: [
-    'Common Mulberry',
-    'Weeping Mulberry'
-  ],
-
-  Loquat: [
-    'Loquat tree'
-  ],
-
-  Quince: [
-    'Quince',
-    'Chinese Quince'
-  ],
-
-  Almond: [
-    'Almond'
-  ],
-
-  Cherry: [
-    'Bird Cherry'
-  ],
-
-  Elderberry: [
-    'Common Elder'
-  ],
-
-  Juniper: [
-    'Common Juniper'
-  ]
-
-}
+  walnut: ["Common Walnut", "Black Walnut", "Walnut"],
+};

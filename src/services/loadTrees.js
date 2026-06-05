@@ -1,65 +1,36 @@
-import { approvedTrees } from '../../data/approvedTrees.js'
-import { addTreeMarkers } from '../map/markers.js'
-import { initializeSearch } from '../search/search.js'
+import { approvedTrees } from "../../data/approvedTrees.js";
+import { addTreeMarkers } from "../map/markers.js";
+import { initializeSearch } from "../search/search.js";
+import { initializeFilters } from "../search/filters.js";
 
 export async function loadTrees(map) {
-
   try {
+    const response = await fetch("./data/edible-trees.geojson");
 
-    const response =
-      await fetch('./data/edible-trees.geojson')
+    const geojson = await response.json();
 
-    const geojson =
-      await response.json()
+    const edibleFeatures = geojson.features.filter((feature) => {
+      const properties = feature.properties || {};
 
-    const edibleFeatures =
-      geojson.features.filter(feature => {
+      const commonName = (properties.CommonName || "").trim();
 
-        const properties =
-          feature.properties || {}
-
-        const commonName =
-          (properties.CommonName || '').trim()
-
-        // EXACT MATCH AGAINST CATEGORY MAP
-        return Object.values(approvedTrees)
-          .flat()
-          .includes(commonName)
-
-      })
+      // EXACT MATCH AGAINST CATEGORY MAP
+      return Object.values(approvedTrees).flat().includes(commonName);
+    });
 
     const edibleGeojson = {
+      type: "FeatureCollection",
 
-      type: 'FeatureCollection',
+      features: edibleFeatures,
+    };
 
-      features: edibleFeatures
+    console.log(`Loaded edible trees: ${edibleFeatures.length}`);
 
-    }
+    const { clusterGroup, allMarkers } = addTreeMarkers(map, edibleGeojson);
 
-    console.log(
-      `Loaded edible trees: ${edibleFeatures.length}`
-    )
-
-    const treeLayer =
-  addTreeMarkers(
-    map,
-    edibleGeojson
-  )
-
-initializeSearch(
-  map,
-  treeLayer
-)
-
+    initializeSearch(map, clusterGroup, allMarkers);
+    initializeFilters(clusterGroup, allMarkers);
+  } catch (error) {
+    console.error("Error loading trees:", error);
   }
-
-  catch (error) {
-
-    console.error(
-      'Error loading trees:',
-      error
-    )
-
-  }
-
 }
