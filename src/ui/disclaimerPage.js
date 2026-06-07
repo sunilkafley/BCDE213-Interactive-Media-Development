@@ -51,13 +51,7 @@ export function openDisclaimerPage(options = {}) {
         <p class="disclaimer-message">
           Location access was not enabled.
 
-          You can continue using Fruit Finder, but some features may be unavailable:
-
-          • Locate Me
-
-          • Route To Tree
-
-          • Nearby fruit suggestions
+          You can continue using Fruit Finder, but some features may be unavailable
         </p>
 
         <div class="disclaimer-action-buttons">

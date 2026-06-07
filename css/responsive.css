@@ -107,7 +107,7 @@
 
     margin: 0;
 
-    bottom: var(--footer-height-mobile);
+    bottom: calc(var(--footer-height-mobile) + var(--space-sm));
 
     z-index: var(--z-bottom-sheet);
   }
@@ -303,7 +303,6 @@
 
     font-size: var(--text-xs);
   }
-
   /* --------------------------
      FOOTER
   -------------------------- */
@@ -318,7 +317,7 @@
 
     min-height: var(--footer-height-mobile);
 
-    z-index: calc(var(--z-bottom-sheet) + 1);
+    z-index: calc(var(--z-bottom-sheet) - 1);
   }
 
   .footer-logo {
@@ -451,6 +450,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
     background: var(--legend-green);
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+
+    text-align: center;
   }
 
   #legendToggle {
@@ -692,16 +695,21 @@
   }
 
   /* ==========================================
-     FOOTER
-  ========================================== */
+   FOOTER
+========================================== */
 
   .footer {
     min-height: var(--footer-height);
   }
 
-  .footer-logo {
-    width: var(--footer-logo-size);
-    height: var(--footer-logo-size);
+  .footer-content {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
   }
   /* ==========================================
      LEAFLET ATTRIBUTION
@@ -716,5 +724,403 @@
     font-size: var(--font-size-xs);
 
     background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ==========================================
+   DESKTOP & LARGE LAPTOP
+   1200px+
+========================================== */
+
+@media (min-width: 75rem) {
+  /* ==========================================
+     APP LAYOUT
+  ========================================== */
+
+  .app-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .main-layout {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 14rem minmax(0, 1fr);
+
+    gap: var(--space-sm);
+
+    width: min(100%, 90rem);
+
+    margin-inline: auto;
+
+    padding: var(--space-sm);
+
+    min-height: 0;
+
+    overflow: hidden;
+  }
+  /* ==========================================
+   HEADER
+========================================== */
+
+  .header-content {
+    width: min(100%, 90rem);
+
+    margin-inline: auto;
+
+    height: var(--header-height);
+
+    padding-inline: var(--space-lg);
+  }
+
+  .logo {
+    width: 5.5rem;
+  }
+
+  .header-nav {
+    gap: var(--space-lg);
+  }
+
+  .header-nav-link {
+    min-height: 3rem;
+
+    padding-inline: var(--space-lg);
+
+    font-size: var(--text-base);
+  }
+
+  .header-nav-link img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .header-nav-link br {
+    display: none;
+  }
+
+  .disclaimer-link {
+    min-width: 10rem;
+  }
+
+  .disclaimer-link::after {
+    content: "Disclaimer";
+    font-family: var(--font-main);
+  }
+
+  /* ==========================================
+     SIDEBAR
+  ========================================== */
+
+  .sidebar,
+  .sidebar.is-collapsed,
+  .sidebar.is-expanded {
+    position: relative;
+
+    inset: auto;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--light-green);
+
+    border-radius: var(--radius-md);
+
+    overflow: hidden;
+
+    transform: none !important;
+  }
+
+  .sheet-handle,
+  #legendChevron {
+    display: none;
+  }
+
+  .legend-sheet-header {
+    padding: var(--space-md);
+
+    background: var(--legend-green);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+  }
+
+  #legendToggle {
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    font-weight: var(--font-weight-bold);
+
+    cursor: default;
+  }
+
+  #legendCategories {
+    flex: 1;
+
+    display: flex !important;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 0.25rem;
+
+    overflow-y: auto;
+
+    background: var(--white);
+  }
+
+  /* ==========================================
+     LEGEND ROWS
+  ========================================== */
+
+  .fruit-chip {
+    display: grid;
+
+    grid-template-columns: 1.75rem 1fr;
+
+    align-items: center;
+
+    min-height: 2.5rem;
+
+    padding-inline: var(--space-md);
+
+    gap: var(--space-sm);
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    transition: var(--transition-fast);
+    font-family: var(--font-main);
+  }
+
+  .fruit-chip:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .fruit-chip.active,
+  .fruit-chip.selected,
+  .fruit-chip[aria-pressed="true"] {
+    background: rgba(96, 169, 109, 0.15);
+
+    border-left: 4px solid var(--primary-green);
+
+    font-weight: 600;
+  }
+
+  .fruit-chip img,
+  .fruit-chip-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+
+    justify-self: center;
+  }
+
+  .fruit-chip-label {
+    font-size: var(--text-base);
+
+    white-space: nowrap;
+
+    text-align: left;
+  }
+
+  /* ==========================================
+     MAP SECTION
+  ========================================== */
+
+  .map-section {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* ==========================================
+     SEARCH
+  ========================================== */
+
+  .search-container {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: var(--space-sm);
+  }
+
+  #search-input {
+    width: 100%;
+
+    height: 3.5rem;
+
+    padding-left: var(--space-lg);
+
+    padding-right: 4rem;
+
+    font-size: var(--text-lg);
+
+    background: var(--white);
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: var(--radius-md);
+  }
+
+  #searchButton {
+    position: absolute;
+
+    top: 50%;
+    right: var(--space-sm);
+
+    transform: translateY(-50%);
+
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+  }
+
+  #searchButton img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  #searchButton:hover img {
+    opacity: 1;
+  }
+
+  #search-input:focus {
+    border-color: var(--primary-green);
+
+    box-shadow: 0 0 0 3px rgba(96, 169, 109, 0.15);
+  }
+  #search-input::placeholder {
+    color: rgba(0, 0, 0, 0.55);
+  }
+  /* ==========================================
+     MAP
+  ========================================== */
+
+  #map {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    width: 100%;
+  }
+
+  /* ==========================================
+     LEAFLET ROUTING
+  ========================================== */
+
+  .leaflet-top.leaflet-right {
+    top: calc(3.5rem + var(--space-sm));
+
+    right: var(--space-sm);
+  }
+
+  /* ==========================================
+     CUSTOM CONTROL RAIL
+  ========================================== */
+
+  .map-controls {
+    top: calc(3.5rem + 8rem);
+
+    right: var(--space-sm);
+  }
+
+  .map-control-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* ==========================================
+     EXIT BUTTON
+  ========================================== */
+
+  .map-clear-route-btn {
+    margin-top: var(--space-sm);
+  }
+
+  /* ==========================================
+     ROUTE PANEL
+  ========================================== */
+
+  .route-panel {
+    right: var(--space-sm);
+
+    bottom: auto;
+
+    top: calc(
+      var(--tablet-control-rail-top) + (var(--tablet-map-control-size) * 8) +
+        var(--space-lg)
+    );
+  }
+
+  /* ==========================================
+   FOOTER
+========================================== */
+  .footer {
+    width: 100%;
+
+    min-height: var(--footer-height);
+
+    background: var(--primary-green);
+  }
+
+  .footer-content {
+    width: min(100%, 90rem);
+
+    margin-inline: auto;
+
+    min-height: var(--footer-height);
+
+    padding-inline: var(--space-lg);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+  }
+
+  /* ==========================================
+     LEAFLET ATTRIBUTION
+  ========================================== */
+
+  .leaflet-control-attribution {
+    margin-right: var(--space-sm);
+
+    margin-bottom: var(--space-sm);
+
+    border-radius: var(--radius-sm);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    font-size: var(--text-xs);
   }
 }

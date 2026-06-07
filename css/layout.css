@@ -350,6 +350,16 @@ body {
 ========================= */
 
 .footer {
+  background: var(--primary-green);
+
+  color: var(--white);
+
+  flex-shrink: 0;
+}
+
+.footer-content {
+  width: 100%;
+
   display: flex;
 
   justify-content: space-between;
@@ -359,10 +369,6 @@ body {
   gap: var(--space-md);
 
   padding: var(--space-md) var(--space-sm) var(--space-xs);
-
-  background: var(--primary-green);
-
-  color: var(--white);
 }
 
 .footer-column {

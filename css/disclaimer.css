@@ -43,9 +43,8 @@
 
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+  justify-content: center;
 
   padding: var(--space-md);
 
@@ -59,12 +58,22 @@
 .disclaimer-title {
   margin: 0;
 
+  text-align: center;
+
   font-size: 1.25rem;
 
   font-weight: 700;
 }
 
 .disclaimer-close {
+  position: absolute;
+
+  right: var(--space-md);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
   border: none;
 
   background: transparent;
@@ -85,7 +94,13 @@
 
   overflow-y: auto;
 
-  padding: var(--space-md);
+  width: min(100%, 75rem);
+
+  margin-inline: auto;
+
+  padding: var(--space-xl);
+
+  line-height: 1.7;
 }
 
 .disclaimer-introduction {
@@ -111,7 +126,7 @@
 .disclaimer-list {
   padding-left: 1.25rem;
 
-  line-height: 1.7;
+  line-height: 1.01;
 }
 
 .disclaimer-footer {

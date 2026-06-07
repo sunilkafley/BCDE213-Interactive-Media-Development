@@ -112,12 +112,12 @@
   /* Footer */
   --footer-height: 5rem;
   --footer-logo-size: 3rem;
-  --footer-height-mobile: 3.5rem;
+  --footer-height-mobile: 2.75rem;
 
   /* BOTTOM SHEET */
 
-  --sheet-collapsed-height: 2.5rem;
-  --sheet-expanded-height: 35vh;
+  --sheet-collapsed-height: 4rem;
+  --sheet-expanded-height: 32vh;
   --sheet-handle-width: 3rem;
   --sheet-handle-height: 0.25rem;
   --legend-chevron-size: 1.8rem;
@@ -276,4 +276,13 @@
   --tablet-map-control-icon-size: 1.125rem;
 
   --tablet-route-controls-gap: var(--space-sm);
+
+  /* ==========================================
+   DESKTOP TOKENS
+========================================== */
+
+  --desktop-header-height: 5rem;
+  --desktop-sidebar-width: 16rem;
+  --desktop-logo-size: 4.5rem;
+  --desktop-search-height: 3.25rem;
 }
