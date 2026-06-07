@@ -173,3 +173,37 @@
 
   outline-offset: 2px;
 }
+
+/* =========================
+   MOBILE POPUP
+========================= */
+
+@media (max-width: 47.9375rem) {
+  .popup-card {
+    max-width: 18rem;
+  }
+
+  .popup-image img {
+    height: var(--popup-image-height-mobile);
+
+    max-height: none;
+
+    object-fit: cover;
+  }
+
+  .popup-title {
+    font-size: var(--text-xl);
+  }
+
+  .popup-meta-row {
+    font-size: var(--text-sm);
+  }
+
+  .popup-description {
+    font-size: var(--text-sm);
+  }
+
+  .route-btn {
+    min-height: 2.75rem;
+  }
+}

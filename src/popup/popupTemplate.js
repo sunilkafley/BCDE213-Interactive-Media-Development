@@ -31,11 +31,11 @@ function renderDetails(data, ripeStatus) {
 
       <div class="popup-meta-row">
         <span class="popup-meta-label">Best Season:</span>
-  <span>${data.bestSeason}</span>
+        <span>${data.bestSeason}</span>
       </div>
 
       <div class="popup-meta-row">
-        <span>Ripe Status:</span>
+        <span class="popup-meta-label">Ripe Status:</span>
         <span>${ripeStatus}</span>
       </div>
 

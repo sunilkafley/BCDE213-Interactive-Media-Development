@@ -85,6 +85,7 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  min-width: 11rem;
 
   padding: var(--space-xxs) var(--space-md);
 
@@ -113,6 +114,10 @@ body {
   width: var(--header-nav-icon-size);
   height: var(--header-nav-icon-size);
   object-fit: contain;
+}
+
+.header-nav-link-text {
+  line-height: var(--leading-extratight);
 }
 
 /* =========================
@@ -391,7 +396,7 @@ body {
   gap: var(--space-xxs);
 }
 
-.footer-brand-text h3 {
+.footer-brand-text h2 {
   font-size: var(--text-base);
   font-weight: 700;
 }

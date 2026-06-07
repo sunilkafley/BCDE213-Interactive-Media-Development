@@ -1,20 +1,4 @@
 /* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 56.25rem) {
-  .main-layout {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-
-    min-height: auto;
-  }
-}
-
-/* ==========================================
    MOBILE
 ========================================== */
 
@@ -29,10 +13,30 @@
     height: 100vh;
     overflow: hidden;
   }
+
   .main-layout {
-    gap: 0;
+    flex: 1;
+    display: block;
+
     padding: 0;
+    gap: 0;
+
+    overflow: hidden;
   }
+
+  .map-section {
+    height: 100%;
+  }
+
+  /* --------------------------
+     HEADER
+  -------------------------- */
+
+  .header-nav-link {
+    min-width: auto;
+    padding-inline: var(--space-sm);
+  }
+
   /* --------------------------
      SEARCH
   -------------------------- */
@@ -42,7 +46,8 @@
 
     width: 100%;
 
-    padding: var(--space-xs) var(--space-xs) var(--space-xs);
+    padding: 0 var(--space-xs) var(--space-xxs);
+    background: var(--primary-green);
   }
 
   #search-input {
@@ -53,7 +58,6 @@
     padding: 0 calc(var(--icon-lg) + var(--space-xl)) 0 var(--space-md);
 
     border: 1px solid var(--border-gray);
-
     border-radius: var(--radius-md);
 
     font-size: var(--text-base);
@@ -65,115 +69,121 @@
     position: absolute;
 
     top: 50%;
-
     right: var(--space-lg);
 
     transform: translateY(-50%);
 
     width: var(--touch-target);
-
     height: var(--touch-target);
 
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    border: none;
     background: transparent;
 
     cursor: pointer;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
   }
 
   #searchButton img {
     width: var(--icon-md);
-
     height: var(--icon-md);
 
     display: block;
   }
+
   /* --------------------------
-     SIDEBAR
+     BOTTOM SHEET
   -------------------------- */
+
   .sidebar.is-collapsed,
   .sidebar.is-expanded {
     position: fixed;
 
     left: 0;
     right: 0;
+    width: 100vw;
 
-    bottom: var(--footer-height);
+    margin: 0;
 
-    width: 100%;
+    bottom: var(--footer-height-mobile);
 
     z-index: var(--z-bottom-sheet);
+  }
+
+  .sidebar.is-collapsed {
+    display: block;
+
+    height: auto;
+    min-height: 0;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    overflow: visible;
+  }
+
+  .sidebar.is-expanded {
+    display: flex;
+    flex-direction: column;
+    max-height: 50vh;
+
+    height: auto;
 
     background: var(--white);
 
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 
     box-shadow: var(--shadow-light);
-  }
 
-  .sidebar.is-collapsed {
-    height: var(--sheet-collapsed-height);
-  }
-
-  .sidebar.is-expanded {
-    display: flex;
-    flex-direction: column;
-    height: var(--sheet-expanded-height);
-    background: var(--white);
+    overflow: hidden;
   }
 
   .sidebar.is-collapsed #legendCategories {
-    flex: 1;
-    overflow-y: auto;
+    display: none !important;
+
+    height: 0;
+    margin: 0;
+    padding: 0;
   }
+
+  .sidebar.is-expanded #legendCategories {
+    display: flex;
+  }
+
   /* --------------------------
-     LEGEND TOGGLE
+     SHEET HEADER
   -------------------------- */
 
   .legend-toggle {
-    padding: var(--space-sm);
+    padding: 0;
 
-    background: var(--white);
-  }
-
-  #legendToggle {
-    width: 100%;
-
-    height: var(--touch-target);
-
-    border: none;
-
-    border-radius: var(--radius-lg);
-
-    background: var(--light-green);
-
-    color: var(--black);
-
-    font-size: var(--text-lg);
-
-    font-weight: 600;
-
-    cursor: pointer;
+    background: transparent;
   }
 
   .legend-sheet-header {
     position: relative;
+
     text-align: center;
-    padding-top: var(--space-xs);
+  }
+
+  .sidebar.is-collapsed .legend-sheet-header {
+    width: 100%;
+    background: var(--white);
+
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 
   .sheet-handle {
     width: var(--sheet-handle-width);
-
     height: var(--sheet-handle-height);
 
-    margin: 0 auto var(--space-sm);
+    margin: 0 auto;
 
     border-radius: var(--radius-lg);
 
@@ -184,64 +194,49 @@
     width: 100%;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    padding: var(--space-xxs) 0;
 
     border: none;
 
     background: transparent;
+
     font-family: var(--font-main);
-
     font-size: var(--text-xl);
+    font-weight: var(--font-weight-light);
 
-    font-weight: 500;
-    padding-bottom: var(--space-lg);
+    cursor: pointer;
   }
 
   #legendChevron {
     position: absolute;
+
     right: var(--space-md);
+
     width: var(--legend-chevron-size);
     height: var(--legend-chevron-size);
   }
 
   #legendCategories {
-    display: flex;
     flex-wrap: wrap;
+
     gap: var(--space-sm);
 
     padding: var(--space-md);
+    overflow-y: auto;
   }
 
-  .legend-category {
-    display: flex;
+  /* --------------------------
+     FRUIT CHIPS
+  -------------------------- */
 
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: var(--touch-target);
-
-    padding: var(--space-xs);
-
-    border: none;
-
-    border-radius: var(--radius-md);
-
-    background: var(--gray);
-
-    font-size: var(--text-sm);
-  }
-
-  /* ==========================================
-    BOTTOM SHEET
-  ========================================== */
   .fruit-chip {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: var(--fruit-chip-gap);
 
     min-height: var(--fruit-chip-height);
@@ -262,12 +257,15 @@
   .fruit-chip-icon {
     width: var(--fruit-chip-icon-size);
     height: var(--fruit-chip-icon-size);
+
     object-fit: contain;
+
     flex-shrink: 0;
   }
 
   .fruit-chip-label {
     white-space: nowrap;
+
     font-size: var(--text-sm);
   }
 
@@ -286,8 +284,8 @@
   }
 
   /* --------------------------
-   LEAFLET ATTRIBUTION
--------------------------- */
+     LEAFLET ATTRIBUTION
+  -------------------------- */
 
   .leaflet-control-attribution {
     position: fixed;
@@ -295,7 +293,8 @@
     left: var(--space-xs);
 
     bottom: calc(
-      var(--sheet-collapsed-height) + var(--footer-height) + var(--space-xs)
+      var(--sheet-collapsed-height) + var(--footer-height-mobile) +
+        var(--space-xs)
     );
 
     z-index: var(--z-overlay);
@@ -304,13 +303,36 @@
 
     font-size: var(--text-xs);
   }
-}
-/* ==========================================
-   SMALL MOBILE
-========================================== */
 
-@media (max-width: 30rem) {
-  #search-input {
+  /* --------------------------
+     FOOTER
+  -------------------------- */
+
+  .footer {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: var(--space-xxs) var(--space-xxs);
+
+    min-height: var(--footer-height-mobile);
+
+    z-index: calc(var(--z-bottom-sheet) + 1);
+  }
+
+  .footer-logo {
+    width: var(--footer-logo-size);
+    height: var(--footer-logo-size);
+  }
+
+  .footer-brand-text h3 {
     font-size: var(--text-sm);
+  }
+
+  .footer-column p {
+    font-size: var(--text-xs);
+
+    line-height: var(--leading-extratight);
   }
 }

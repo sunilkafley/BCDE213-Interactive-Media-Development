@@ -23,6 +23,7 @@
   --font-main: "Source Sans 3", sans-serif;
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
+  --font-weight-light: 500;
 
   /* FONT SIZE */
 
@@ -34,7 +35,7 @@
   --text-2xl: 1.5rem;
 
   /* LINE HEIGHT */
-
+  --leading-extratight: 1.1;
   --leading-tight: 1.4;
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
@@ -68,10 +69,10 @@
   /* Header */
 
   --header-height: 5.5rem;
-  --logo-width-mobile: 5rem;
+  --logo-width-mobile: 4.5rem;
   --brand-title-size: 1.375rem;
   --brand-location-size: 0.875rem;
-  --header-nav-icon-size: 2rem;
+  --header-nav-icon-size: 1.5rem;
   --header-nav-text-size: 1rem;
   --header-gap: 0.5rem;
 
@@ -109,13 +110,14 @@
   --transition-normal: 0.3s ease;
 
   /* Footer */
-  --footer-height: 4rem;
+  --footer-height: 5rem;
   --footer-logo-size: 3rem;
+  --footer-height-mobile: 3.5rem;
 
   /* BOTTOM SHEET */
 
-  --sheet-collapsed-height: 3.3rem;
-  --sheet-expanded-height: 61vh;
+  --sheet-collapsed-height: 2.5rem;
+  --sheet-expanded-height: 35vh;
   --sheet-handle-width: 3rem;
   --sheet-handle-height: 0.25rem;
   --legend-chevron-size: 1.8rem;
@@ -136,9 +138,10 @@
   --popup-title-size: var(--text-2xl);
   --popup-body-size: var(--text-base);
   --popup-shadow: var(--shadow-light);
-  --popup-close-size: 2rem;
+  --popup-close-size: 10rem;
   --popup-close-font-size: 1.5rem;
   --popup-close-offset: var(--space-xxs);
+  --popup-image-height-mobile: 5rem;
 
   /* MAP CONTROLS */
 
@@ -166,15 +169,4 @@
   --route-info-duration-size: var(--text-base);
   --route-info-distance-size: var(--text-xs);
   --route-info-min-width: 4.5rem;
-
-  /* ==========================
-   BREAKPOINTS
-   (Documentation Only)
-========================== */
-
-  /*
-Mobile: 767px
-Tablet: 900px
-Desktop: 901px+
-*/
 }
