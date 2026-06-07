@@ -27,17 +27,21 @@ function renderHeader(data) {
 
 function renderDetails(data, ripeStatus) {
   return `
-    <p>
-      Best Season:
-      ${data.bestSeason}
-    </p>
+    <div class="popup-meta">
 
-    <p>
-      Ripe Status:
-      ${ripeStatus}
-    </p>
+      <div class="popup-meta-row">
+        <span class="popup-meta-label">Best Season:</span>
+  <span>${data.bestSeason}</span>
+      </div>
 
-    <p>
+      <div class="popup-meta-row">
+        <span>Ripe Status:</span>
+        <span>${ripeStatus}</span>
+      </div>
+
+    </div>
+
+    <p class="popup-description">
       ${data.description}
     </p>
   `;
@@ -51,17 +55,25 @@ export function popupTemplate(popupData) {
 
       ${renderImage(popupData)}
 
-      ${renderHeader(popupData)}
+      <div class="popup-content">
 
-      ${renderDetails(popupData, ripeStatus)}
+        ${renderHeader(popupData)}
 
-      <button 
-        class="route-btn" 
-        data-lat="${popupData.latitude}"
-        data-lng="${popupData.longitude}"
+        ${renderDetails(popupData, ripeStatus)}
+
+      </div>
+
+      <div class="popup-actions">
+
+        <button
+          class="route-btn"
+          data-lat="${popupData.latitude}"
+          data-lng="${popupData.longitude}"
         >
-        Route To Tree
+          Get Directions
         </button>
+
+      </div>
 
     </div>
   `;

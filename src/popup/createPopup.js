@@ -7,9 +7,10 @@ export function createPopup(marker, popupData, map) {
 
     keepInView: true,
 
-    autoPanPadding: [20, 20],
+    autoPanPaddingTopLeft: [50, 50],
+    autoPanPaddingBottomRight: [50, 320],
 
-    maxWidth: 320,
+    maxWidth: 240,
   });
 
   marker.on("popupopen", (event) => {

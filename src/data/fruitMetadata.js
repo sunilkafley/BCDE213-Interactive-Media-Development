@@ -194,7 +194,7 @@ export const fruitMetadata = {
   plum: {
     key: "plum",
     displayName: "Plum Tree",
-    image: "",
+    image: "assets/fruits/plum.webp",
     hasImage: true,
     markerIcon: "plum",
     description:
@@ -266,7 +266,7 @@ export const fruitMetadata = {
   walnut: {
     key: "walnut",
     displayName: "Walnut Tree",
-    image: "p",
+    image: "",
     hasImage: false,
     markerIcon: "walnut",
     description:

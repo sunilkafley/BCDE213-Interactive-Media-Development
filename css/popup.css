@@ -7,12 +7,19 @@
 
   max-width: var(--popup-width);
 
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-xxs);
+
   font-family: var(--font-main);
 }
+
 /* HEADER */
 
 .popup-header {
-  margin-bottom: var(--space-sm);
+  margin: 0;
 }
 
 .popup-title {
@@ -32,15 +39,18 @@
 
   flex-direction: column;
 
-  gap: var(--space-sm);
+  gap: var(--space-xxs);
 }
 
 .popup-description {
+  margin-top: var(--space-xxs);
   margin: 0;
 
   font-size: var(--popup-body-size);
 
-  line-height: var(--leading-tight);
+  line-height: var(--leading-normal);
+
+  opacity: 0.9;
 }
 
 /* LEAFLET POPUP */
@@ -54,9 +64,24 @@
 .leaflet-popup-content {
   margin: var(--space-md);
 }
+
+.leaflet-popup-close-button {
+  width: var(--popup-close-size);
+  height: var(--popup-close-size);
+
+  font-size: var(--popup-close-font-size);
+
+  line-height: var(--popup-close-size);
+
+  top: var(--popup-close-offset);
+  right: var(--popup-close-offset);
+
+  padding: 0;
+}
 /* Pop up Image */
+
 .popup-image {
-  margin-bottom: var(--space-md);
+  margin: 0;
 }
 
 .popup-image img {
@@ -70,25 +95,31 @@
 
   border-radius: var(--radius-md);
 }
-
 .popup-meta {
   display: flex;
 
   flex-direction: column;
 
-  gap: var(--space-xs);
+  gap: var(--space-xxs);
 }
 
 .popup-meta-row {
   display: flex;
 
-  justify-content: space-between;
+  align-items: center;
 
   gap: var(--space-md);
 
   font-size: var(--text-base);
+
+  opacity: 0.9;
 }
 
+.popup-meta-label {
+  font-weight: var(--font-weight-semibold);
+
+  min-width: var(--popup-image-height);
+}
 /* =========================
    POPUP ACTIONS
 ========================= */
@@ -100,7 +131,9 @@
 
   gap: var(--space-sm);
 
-  margin-top: var(--space-sm);
+  margin-top: 0;
+
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 .route-btn {
