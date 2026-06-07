@@ -336,3 +336,385 @@
     line-height: var(--leading-extratight);
   }
 }
+
+/* ==========================================
+   TABLET
+   768px - 1199px
+========================================== */
+
+@media (min-width: 48rem) and (max-width: 74.9375rem) {
+  /* ==========================================
+     APP LAYOUT
+  ========================================== */
+
+  .app-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .main-layout {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 10rem minmax(0, 1fr);
+
+    gap: var(--space-xs);
+
+    padding: var(--space-xs);
+
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  /* ==========================================
+   TABLET HEADER
+========================================== */
+
+  .header-content {
+    height: var(--tablet-header-height);
+
+    padding-inline: var(--space-sm);
+  }
+
+  .logo {
+    width: var(--tablet-logo-width);
+  }
+
+  .header-nav {
+    gap: var(--tablet-header-gap);
+  }
+
+  .header-nav-link {
+    min-height: var(--tablet-nav-height);
+
+    min-width: auto;
+
+    padding-inline: var(--space-md);
+
+    font-size: var(--tablet-nav-font-size);
+
+    white-space: nowrap;
+  }
+
+  .header-nav-link img {
+    width: var(--tablet-nav-icon-size);
+    height: var(--tablet-nav-icon-size);
+
+    flex-shrink: 0;
+  }
+  .header-nav-link br {
+    display: none;
+  }
+
+  /* ==========================================
+     SIDEBAR
+  ========================================== */
+
+  .sidebar,
+  .sidebar.is-collapsed,
+  .sidebar.is-expanded {
+    position: relative;
+
+    inset: auto;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    transform: none !important;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--light-green);
+
+    border-radius: var(--radius-md);
+
+    overflow: hidden;
+
+    box-shadow: none;
+  }
+
+  /* Disable mobile bottom sheet */
+
+  .sheet-handle,
+  #legendChevron {
+    display: none;
+  }
+
+  .legend-sheet-header {
+    padding: var(--space-sm);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    background: var(--legend-green);
+  }
+
+  #legendToggle {
+    border: none;
+
+    box-shadow: none;
+
+    background: transparent;
+
+    padding: var(--space-sm);
+    font-family: var(--font-main);
+
+    font-weight: var(--font-weight-bold);
+  }
+  /* ==========================================
+     LEGEND CONTENT
+  ========================================== */
+
+  #legendCategories {
+    flex: 1;
+
+    display: flex !important;
+
+    flex-direction: column;
+
+    gap: 0.125rem;
+
+    padding: 0.125rem;
+
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  /* ==========================================
+   TABLET LEGEND ROWS
+========================================== */
+
+  .fruit-chip {
+    display: grid;
+
+    grid-template-columns:
+      var(--tablet-legend-icon-column)
+      1fr;
+
+    align-items: center;
+
+    min-height: var(--tablet-legend-row-height);
+
+    padding-inline: var(--space-sm);
+
+    gap: var(--space-xs);
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .fruit-chip:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .fruit-chip img,
+  .fruit-chip-icon {
+    width: var(--tablet-legend-icon-size);
+
+    height: var(--tablet-legend-icon-size);
+
+    object-fit: contain;
+
+    justify-self: center;
+  }
+
+  .fruit-chip-label {
+    font-size: var(--tablet-legend-text-size);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    text-align: left;
+  }
+
+  .fruit-chip.active,
+  .fruit-chip.selected,
+  .fruit-chip[aria-pressed="true"] {
+    background: rgba(96, 169, 109, 0.15);
+
+    border-left: 4px solid var(--primary-green);
+
+    font-weight: 600;
+  }
+  /* ==========================================
+     MAP COLUMN
+  ========================================== */
+
+  .map-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* ==========================================
+   TABLET SEARCH
+========================================== */
+
+  .search-container {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: var(--space-xs);
+  }
+
+  #search-input {
+    width: 100%;
+
+    height: var(--tablet-search-height);
+
+    padding-left: var(--space-md);
+
+    padding-right: calc(var(--tablet-search-height) + var(--space-sm));
+
+    background: var(--white);
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: var(--radius-md);
+
+    font-size: var(--tablet-search-font-size);
+
+    transition: var(--transition-fast);
+  }
+
+  #searchButton {
+    position: absolute;
+
+    top: 50%;
+    right: var(--space-xs);
+
+    transform: translateY(-50%);
+
+    width: var(--tablet-search-height);
+
+    height: var(--tablet-search-height);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+  }
+  #searchButton img {
+    width: var(--tablet-search-icon-size);
+
+    height: var(--tablet-search-icon-size);
+
+    object-fit: contain;
+
+    opacity: 0.7;
+
+    transition: var(--transition-fast);
+  }
+  #searchButton:hover img {
+    opacity: 1;
+  }
+
+  #search-input:focus {
+    border-color: var(--primary-green);
+
+    box-shadow: 0 0 0 3px rgba(96, 169, 109, 0.15);
+  }
+  #search-input::placeholder {
+    color: rgba(0, 0, 0, 0.55);
+  }
+  /* ==========================================
+     MAP
+  ========================================== */
+
+  #map {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    width: 100%;
+  }
+
+  /* ==========================================
+   TABLET MAP CONTROLS
+========================================== */
+
+  /* Leaflet routing button */
+
+  .leaflet-top.leaflet-right {
+    top: calc(var(--tablet-search-height) + var(--space-sm));
+
+    right: var(--tablet-control-rail-right);
+  }
+  /* Custom control rail */
+
+  .map-controls {
+    top: calc(
+      var(--tablet-search-height) + (var(--tablet-map-control-size) * 2) +
+        var(--space-xl)
+    );
+
+    right: var(--tablet-control-rail-right);
+  }
+  /* Exit button */
+
+  .map-clear-route-btn {
+    margin-top: var(--tablet-route-controls-gap);
+  }
+
+  /* Route panel stays bottom-right */
+
+  .route-panel {
+    right: var(--space-sm);
+
+    bottom: auto;
+
+    top: calc(
+      var(--tablet-control-rail-top) + (var(--tablet-map-control-size) * 8) +
+        var(--space-lg)
+    );
+  }
+
+  /* ==========================================
+     FOOTER
+  ========================================== */
+
+  .footer {
+    min-height: var(--footer-height);
+  }
+
+  .footer-logo {
+    width: var(--footer-logo-size);
+    height: var(--footer-logo-size);
+  }
+  /* ==========================================
+     LEAFLET ATTRIBUTION
+  ========================================== */
+
+  .leaflet-control-attribution {
+    margin-right: var(--space-sm);
+    margin-bottom: var(--space-sm);
+
+    border-radius: var(--radius-sm);
+
+    font-size: var(--font-size-xs);
+
+    background: rgba(255, 255, 255, 0.9);
+  }
+}

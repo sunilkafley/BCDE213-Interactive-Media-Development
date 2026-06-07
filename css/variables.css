@@ -169,4 +169,111 @@
   --route-info-duration-size: var(--text-base);
   --route-info-distance-size: var(--text-xs);
   --route-info-min-width: 4.5rem;
+
+  /* SIDEBAR */
+
+  --sidebar-width-tablet: 18rem;
+  --sidebar-width-desktop: 22rem;
+
+  /* LAYOUT */
+
+  --layout-gap: var(--space-lg);
+  --layout-padding: var(--space-sm);
+
+  /* MAP POSITIONING */
+
+  --map-control-offset-top: 5rem;
+
+  --route-panel-offset-mobile: 10rem;
+  --route-panel-offset-desktop: 1rem;
+
+  /* ==========================
+   TABLET HEADER
+========================== */
+
+  --tablet-header-height: 5rem;
+
+  --tablet-logo-width: 5rem;
+
+  --tablet-nav-height: 2.75rem;
+
+  --tablet-nav-font-size: var(--text-base);
+
+  --tablet-nav-icon-size: 1.25rem;
+
+  --tablet-header-gap: var(--space-sm);
+
+  /* ==========================
+   TABLET SIDEBAR
+========================== */
+
+  --tablet-sidebar-width: 11rem;
+
+  --tablet-fruit-row-height: 2rem;
+
+  --tablet-fruit-icon-size: 1rem;
+
+  --tablet-fruit-font-size: var(--text-sm);
+
+  --tablet-sidebar-padding: var(--space-xs);
+  /* ==========================
+   TABLET SEARCH
+========================== */
+
+  --tablet-search-height: 2.75rem;
+
+  --tablet-search-font-size: var(--text-base);
+
+  --tablet-search-icon-size: 1.25rem;
+  /* ==========================
+   TABLET MAP CONTROLS
+========================== */
+
+  --tablet-map-control-size: 2.75rem;
+
+  --tablet-map-control-icon-size: 1.25rem;
+
+  /* TABLET LEGEND LAYOUT */
+
+  --tablet-legend-row-height: 2.25rem;
+
+  --tablet-legend-icon-column: 1.5rem;
+
+  --tablet-legend-icon-size: 1rem;
+
+  --tablet-legend-text-size: var(--text-sm);
+
+  --tablet-legend-row-gap: 0;
+
+  /* ==========================
+   TABLET SEARCH
+========================== */
+
+  --tablet-search-height: 2.75rem;
+
+  --tablet-search-padding: var(--space-sm);
+
+  --tablet-search-icon-size: 1.25rem;
+
+  --tablet-search-font-size: var(--text-base);
+
+  --tablet-search-border-radius: var(--radius-md);
+
+  /* ==========================
+   TABLET CONTROL RAIL
+========================== */
+
+  --tablet-control-rail-top: calc(
+    var(--tablet-search-height) + var(--space-lg)
+  );
+
+  --tablet-control-rail-right: var(--space-sm);
+
+  --tablet-map-control-gap: var(--space-xs);
+
+  --tablet-map-control-size: 3rem;
+
+  --tablet-map-control-icon-size: 1.125rem;
+
+  --tablet-route-controls-gap: var(--space-sm);
 }

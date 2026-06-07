@@ -55,7 +55,7 @@
 .map-controls {
   position: absolute;
 
-  top: calc(var(--search-height) + 5rem);
+  top: calc(var(--search-height) + var(--map-control-offset-top));
 
   right: var(--space-xss);
 
@@ -237,7 +237,7 @@
 
   right: var(--space-xs);
 
-  bottom: 10rem;
+  bottom: var(--route-panel-offset-mobile);
 
   z-index: var(--z-overlay);
 }
