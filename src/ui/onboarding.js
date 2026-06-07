@@ -1,6 +1,7 @@
 import { requestLocation } from "../map/locationService.js";
 
 import { showGuidelinesModal } from "./guidelinesModal.js";
+import { openDisclaimerPage } from "./disclaimerPage.js";
 
 export function showOnboardingModal(onAllow, onDeny) {
   const existingModal = document.getElementById("onboardingModal");
@@ -98,7 +99,9 @@ export function startOnboarding() {
     },
 
     () => {
-      console.log("Redirect to disclaimer");
+      openDisclaimerPage({
+        locationDenied: true,
+      });
     },
   );
 }

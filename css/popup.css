@@ -3,11 +3,12 @@
 ========================= */
 
 .popup-card {
+  width: 100%;
+
   max-width: var(--popup-width);
 
   font-family: var(--font-main);
 }
-
 /* HEADER */
 
 .popup-header {

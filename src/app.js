@@ -4,6 +4,8 @@ import { initLegendDrawer } from "./ui/legendDrawer.js";
 import { createFruitFilterPanel } from "./legend/createFruitFilterPanel.js";
 import { initializeControls } from "./map/controls.js";
 import { startOnboarding } from "./ui/onboarding.js";
+import { initializeDisclaimerTrigger } from "./ui/disclaimerTrigger.js";
+import { initializeUserLocation } from "./map/userLocationMarker.js";
 
 // START APPLICATION
 async function initApp() {
@@ -13,11 +15,16 @@ async function initApp() {
   // INITIALIZE LEGEND DRAWER
   initLegendDrawer();
 
+  //DISCLAIMER
+  initializeDisclaimerTrigger();
+
   // CREATE MAP
   const map = initMap();
 
   // INITIALIZE MAP CONTROLS
   initializeControls(map);
+
+  initializeUserLocation(map);
 
   // LOAD TREES
   await loadTrees(map);

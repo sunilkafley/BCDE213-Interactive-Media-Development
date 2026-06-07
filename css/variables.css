@@ -9,11 +9,20 @@
   --gray: #f5f5f5;
   --border-gray: #e5e5e5;
 
+  /* SEMANTIC COLORS */
+
+  --surface: var(--white);
+  --text-primary: var(--black);
+  --text-secondary: var(--primary-green);
+  --location-blue: #4285f4;
+
   /* TYPOGRAPHY */
 
   /* FONT FAMILY */
 
   --font-main: "Source Sans 3", sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
 
   /* FONT SIZE */
 
@@ -33,6 +42,7 @@
   /* SPACING */
 
   --space-xxs: 0.25rem;
+  --space-xss: 0.45rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
@@ -53,21 +63,16 @@
   /* LAYOUT */
 
   --search-height: 3rem;
-
   --touch-target: 2.75rem;
 
   /* Header */
 
   --header-height: 7rem;
-
   --logo-width-mobile: 6.5rem;
-
   --brand-title-size: 1.375rem;
   --brand-location-size: 0.875rem;
-
   --header-nav-icon-size: 2rem;
   --header-nav-text-size: 1rem;
-
   --header-gap: 1rem;
 
   /* LAYOUT WIDTHS */
@@ -92,7 +97,6 @@
   /* ==========================
    Z-INDEX
 ========================== */
-
   --z-map: 50;
   --z-search: 20;
   --z-bottom-sheet: 100;
@@ -119,35 +123,46 @@
   /* Fruit Filter Panel */
 
   --fruit-chip-height: 2.25rem;
-
   --fruit-chip-icon-size: 1.125rem;
-
   --fruit-chip-gap: 0.75rem;
-
   --fruit-chip-padding-y: 0.375rem;
   --fruit-chip-padding-x: 0.75rem;
-
   --radius-pill: 999rem;
 
   /* Popup */
 
   --popup-width: 18rem;
-
   --popup-image-height: 10rem;
-
   --popup-title-size: var(--text-2xl);
-
   --popup-body-size: var(--text-base);
-
   --popup-shadow: var(--shadow-light);
+
+  /* MAP CONTROLS */
+
+  --map-control-size: 3rem;
+  --map-control-size-mobile: 2.75rem;
+
+  --map-control-icon-size: 1.5rem;
+  --map-control-icon-size-mobile: 1.25rem;
 
   /* ==========================
    ROUTING
 ========================== */
 
   --route-button-height: var(--touch-target);
-
   --route-button-font-size: var(--text-base);
+
+  /* ROUTE COLORS */
+
+  --route-info: #1976d2;
+  --route-danger: #d32f2f;
+
+  /* ROUTE PANEL */
+
+  --route-info-icon-size: 1.125rem;
+  --route-info-duration-size: var(--text-base);
+  --route-info-distance-size: var(--text-xs);
+  --route-info-min-width: 4.5rem;
 
   /* ==========================
    BREAKPOINTS

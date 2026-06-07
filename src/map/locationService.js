@@ -26,6 +26,8 @@ export function requestLocation() {
           accuracy: position.coords.accuracy,
         };
 
+        document.dispatchEvent(new CustomEvent("fruitfinder:location-updated"));
+
         resolve(currentLocation);
       },
 
@@ -34,12 +36,20 @@ export function requestLocation() {
       },
 
       {
-        enableHighAccuracy: true,
+        enableHighAccuracy: false,
 
-        timeout: 10000,
+        timeout: 5000,
 
-        maximumAge: 0,
+        maximumAge: 300000,
       },
     );
   });
+}
+
+export function getCurrentLatLng() {
+  if (!currentLocation) {
+    return null;
+  }
+
+  return [currentLocation.latitude, currentLocation.longitude];
 }
